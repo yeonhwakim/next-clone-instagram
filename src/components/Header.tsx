@@ -8,6 +8,7 @@ import SearchIcon from "./ui/icons/SearchIcon";
 import SearchFilledIcon from "./ui/icons/SearchFilledIcon";
 import NewIcom from "./ui/icons/NewIcom";
 import NewFilledIcom from "./ui/icons/NewFilledIcom";
+import ColorButton from "./ui/ColorButton";
 
 const menu = [
   {
@@ -41,7 +42,7 @@ export default function Header() {
               <Link href={href}>{pathname === href ? clickedIicon : icon}</Link>
             </li>
           ))}
-          <li></li>
+          <ColorButton text="Sign In" onClick={() => {}}></ColorButton>
         </ul>
         <button>SIGN IN</button>
       </nav>
