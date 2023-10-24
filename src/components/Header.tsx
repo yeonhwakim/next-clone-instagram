@@ -49,15 +49,9 @@ export default function Header() {
               </li>
             ))}
             {session ? (
-              <ColorButton
-                text="Sign Out"
-                onClick={() => signOut()}
-              ></ColorButton>
+              <ColorButton text="Sign Out" onClick={() => signOut()} />
             ) : (
-              <ColorButton
-                text="Sign In"
-                onClick={() => signIn()}
-              ></ColorButton>
+              <ColorButton text="Sign In" onClick={() => signIn()} />
             )}
           </ul>
         </nav>
