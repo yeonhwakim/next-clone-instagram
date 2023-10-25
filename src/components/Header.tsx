@@ -11,6 +11,7 @@ import NewFilledIcom from "./ui/icons/NewFilledIcom";
 import ColorButton from "./ui/ColorButton";
 
 import { useSession, signIn, signOut } from "next-auth/react";
+import Avatar from "./Avatar";
 
 const menu = [
   {
@@ -32,6 +33,7 @@ const menu = [
 export default function Header() {
   const pathname = usePathname();
   const { data: session } = useSession();
+  const user = session?.user;
 
   return (
     <header className="sticky top-0 bg-white z-10 border-b">
@@ -48,11 +50,16 @@ export default function Header() {
                 </Link>
               </li>
             ))}
-            {session ? (
-              <ColorButton text="Sign Out" onClick={() => signOut()} />
-            ) : (
-              <ColorButton text="Sign In" onClick={() => signIn()} />
-            )}
+            <Link href={`/user/${user?.username}`}>
+              <li>{user && <Avatar imege={user.image} />}</li>
+            </Link>
+            <li>
+              {session ? (
+                <ColorButton text="Sign Out" onClick={() => signOut()} />
+              ) : (
+                <ColorButton text="Sign In" onClick={() => signIn()} />
+              )}
+            </li>
           </ul>
         </nav>
       </div>
