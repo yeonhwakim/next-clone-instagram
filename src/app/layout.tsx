@@ -3,6 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
 import AuthContext from "@/context/AuthContext";
+import Sidebar from "@/components/SideBar";
 
 const openSans = Open_Sans({ subsets: ["latin"] });
 
