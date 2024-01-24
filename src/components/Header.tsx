@@ -51,7 +51,9 @@ export default function Header() {
               </li>
             ))}
             <Link href={`/user/${user?.username}`}>
-              <li>{user && <Avatar imege={user.image} />}</li>
+              <li>
+                {user && <Avatar imege={user.image} size="small" highlight />}
+              </li>
             </Link>
             <li>
               {session ? (
