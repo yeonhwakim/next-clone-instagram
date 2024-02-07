@@ -9,7 +9,7 @@ export default function Sidebar({ user: { name, username, image } }: Props) {
   return (
     <>
       <div className="flex items-center">
-        {image && <Avatar imege={image} />}
+        {image && <Avatar image={image} />}
         <div className="ml-4">
           <p className="font-bold">{username}</p>
           <p className="text-lg text-neutral-500 leading-4">{name}</p>

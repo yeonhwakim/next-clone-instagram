@@ -52,7 +52,7 @@ export default function Header() {
             ))}
             <Link href={`/user/${user?.username}`}>
               <li>
-                {user && <Avatar imege={user.image} size="small" highlight />}
+                {user && <Avatar image={user.image} size="small" highlight />}
               </li>
             </Link>
             <li>

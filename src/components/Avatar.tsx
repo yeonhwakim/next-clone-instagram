@@ -1,11 +1,11 @@
 type Props = {
-  imege?: string | null;
+  image?: string | null;
   size?: "small" | "normal";
   highlight?: boolean;
 };
 
 export default function Avatar({
-  imege,
+  image,
   size = "normal",
   highlight = false,
 }: Props) {
@@ -13,8 +13,10 @@ export default function Avatar({
     <div className={getContainerStyle(size, highlight)}>
       {/*eslint-disable-next-line @next/next/no-img-element*/}
       <img
-        className={`bg-white rounded-full ${getImageSizeStyle(size)}`}
-        src={imege ?? undefined}
+        className={`bg-white object-cover rounded-full ${getImageSizeStyle(
+          size
+        )}`}
+        src={image ?? undefined}
         alt="user profile"
       />
     </div>
